@@ -8,3 +8,4 @@ DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is dep
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from load at /Users/coreyfischer/.gem/ruby/2.3.3/bin/rake:22)
   [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block (3 levels) in <class:Railtie> at /Users/coreyfischer/.gem/ruby/2.3.3/gems/activerecord-5.0.3/lib/active_record/railtie.rb:113)
