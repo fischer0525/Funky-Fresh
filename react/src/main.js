@@ -1,32 +1,37 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, hashHistory } from "react-router";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
-import AboutUs from './AboutUs';
-import Buy from './Buy';
-import Collaborators from './Collaborators';
-import Contact from './Contact';
-import Layout from './Layout';
-import NewsEvents from './NewsEvents';
-import Products from './Products';
+import AboutUs from './components/AboutUs';
+import Buy from './components/Buy';
+import Collaborators from './components/Collaborators';
+import Contact from './components/Contact';
+import NewsEvents from './components/NewsEvents';
+import Products from './components/Products';
 
 $(function() {
   let reactApp = document.getElementById('app')
   if(reactApp){
   ReactDOM.render(
-    <Router history="hashHistory">
-      <Route path="/" component={Layout}>
-        <IndexRoute component={NewsEvents}></IndexRoute>
-        <Route path="AboutUs" component={AboutUs}></Route>
-        <Route path="Buy" component={Buy}></Route>
-        <Route path="Collaborators" component={Collaborators}></Route>
-        <Route path="Contact" component={Contact}></Route>
-        <Route path="Layout" component={Layout}></Route>
-        <Route path="Products" component={Products}></Route>
-      </Route>
+    <Router>
+    <div>
+      <Link to="/">News and Events</Link>
+      <Link to="/AboutUs">About Us</Link>
+      <Link to="/Products">Products</Link>
+      <Link to="/Buy">Where to Buy</Link>
+      <Link to="/Collaborators">Collaborators</Link>
+      <Link to="/Contact">Contact Us</Link>
+
+      <Route exact path="/" component={NewsEvents}/>
+      <Route path="/AboutUs" component={AboutUs}/>
+      <Route path="/Buy" component={Buy}/>
+      <Route path="/Collaborators" component={Collaborators}/>
+      <Route path="/Contact" component={Contact}/>
+      <Route path="/Products" component={Products}/>
+    </div>
     </Router>,
     reactApp
-    );
   );
+  };
 });

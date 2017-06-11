@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,9 +10,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20170611055317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "buys", force: :cascade do |t|
+    t.string "business_name",        null: false
+    t.string "business_url"
+    t.string "business_description", null: false
+    t.string "business_address",     null: false
+    t.string "business_city",        null: false
+    t.string "business_state",       null: false
+    t.string "business_zip",         null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "first_name",     null: false
+    t.string "last_name",      null: false
+    t.string "email",          null: false
+    t.string "contact_number"
+    t.string "message",        null: false
+  end
+
+  create_table "contributors", force: :cascade do |t|
+    t.string "contributor_img",  null: false
+    t.string "contributor_name", null: false
+    t.string "contributor_bio",  null: false
+    t.string "contributor_url"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "event_img",         null: false
+    t.string   "event_title",       null: false
+    t.date     "event_date",        null: false
+    t.string   "event_description", null: false
+    t.string   "event_location",    null: false
+    t.string   "event_url"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "news", force: :cascade do |t|
+    t.string   "news_img"
+    t.string   "news_title",       null: false
+    t.string   "news_date",        null: false
+    t.string   "news_description", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "product_title",       null: false
+    t.string "product_img",         null: false
+    t.string "product_description", null: false
+  end
 
 end

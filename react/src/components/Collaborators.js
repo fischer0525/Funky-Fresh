@@ -5,8 +5,8 @@ class Collaborators extends Component {
   super(props);
   }
   render() {
-      return (
-      );
+      return (<div>Collaborators</div>
+      )
   }
 }
 

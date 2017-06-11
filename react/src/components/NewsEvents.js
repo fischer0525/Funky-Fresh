@@ -6,8 +6,9 @@ class NewsEvents extends Component {
   }
   render() {
       return (
-      );
+        <div>News and Events</div>
+      )
   }
-}
+};
 
 export default NewsEvents;

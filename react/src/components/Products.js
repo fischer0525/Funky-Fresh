@@ -5,9 +5,9 @@ class Products extends Component {
   super(props);
   }
   render() {
-      return (
-      );
+    return (<div>Products</div>
+    )
   }
-}
+};
 
 export default Products;

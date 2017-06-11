@@ -9,3 +9,849 @@ DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is dep
 DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from load at /Users/coreyfischer/.gem/ruby/2.3.3/bin/rake:22)
   [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block (3 levels) in <class:Railtie> at /Users/coreyfischer/.gem/ruby/2.3.3/gems/activerecord-5.0.3/lib/active_record/railtie.rb:113)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from load at /Users/coreyfischer/.gem/ruby/2.3.3/bin/rake:22)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from load at /Users/coreyfischer/.gem/ruby/2.3.3/bin/rake:22)
+  [1m[35m (27.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4798526764507299390);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateProducts (20170611052759)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.1ms)[0m  [1m[35mCREATE TABLE "products" ("id" serial primary key, "product_title" character varying NOT NULL, "product_img" character varying NOT NULL, "product_description" character varying NOT NULL)[0m
+  [1m[35mSQL (4.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170611052759"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBuys (20170611053230)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "buys" ("id" serial primary key, "business_name" character varying NOT NULL, "business_url" character varying, "business_description" character varying NOT NULL, "business_address" character varying NOT NULL, "business_city" character varying NOT NULL, "business_state" character varying NOT NULL, "business_zip" character varying NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170611053230"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContacts (20170611053602)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" serial primary key, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "email" character varying NOT NULL, "contact_number" character varying, "message" character varying NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170611053602"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateNews (20170611054239)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "news" ("id" serial primary key, "news_img" character varying, "news_title" character varying NOT NULL, "news_date" character varying NOT NULL, "news_description" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170611054239"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEvents (20170611054437)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "events" ("id" serial primary key, "event_img" character varying NOT NULL, "event_title" character varying NOT NULL, "event_date" date NOT NULL, "event_description" character varying NOT NULL, "event_location" character varying NOT NULL, "event_url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170611054437"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContributors (20170611055317)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "contributors" ("id" serial primary key, "contributor_img" character varying NOT NULL, "contributor_name" character varying NOT NULL, "contributor_bio" character varying NOT NULL, "contributor_url" character varying)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170611055317"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-06-11 08:27:10.725324"], ["updated_at", "2017-06-11 08:27:10.725324"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4798526764507299390)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2017-06-11 04:40:20 -0400
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block (3 levels) in <class:Railtie> at /Users/coreyfischer/.gem/ruby/2.3.3/gems/activerecord-5.0.3/lib/active_record/railtie.rb:113)
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (uninitialized constant HomesController):
+  
+activesupport (5.0.3) lib/active_support/inflector/methods.rb:268:in `const_get'
+activesupport (5.0.3) lib/active_support/inflector/methods.rb:268:in `block in constantize'
+activesupport (5.0.3) lib/active_support/inflector/methods.rb:266:in `each'
+activesupport (5.0.3) lib/active_support/inflector/methods.rb:266:in `inject'
+activesupport (5.0.3) lib/active_support/inflector/methods.rb:266:in `constantize'
+actionpack (5.0.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.0.3) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (5.0.3) lib/action_dispatch/routing/route_set.rb:30:in `serve'
+actionpack (5.0.3) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.3) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.3) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.3) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.3) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.3) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.3) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.3) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.3) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered collection of /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [17 times] (15.9ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.8ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (14.6ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (143.1ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers_coreyfischer__gem_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__4517181483890742338_70333346828940 at /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (84.2ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (178.9ms)
+Started GET "/" for ::1 at 2017-06-11 04:41:48 -0400
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block (3 levels) in <class:Railtie> at /Users/coreyfischer/.gem/ruby/2.3.3/gems/activerecord-5.0.3/lib/active_record/railtie.rb:113)
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RootsController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant ApplicationRecord):
+  
+app/models/new.rb:1:in `<top (required)>'
+app/controllers/roots_controller.rb:3:in `index'
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (13.3ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (94.8ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers_coreyfischer__gem_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__4514993316164305058_70337232533040 at /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (91.4ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (184.1ms)
+Started POST "/__web_console/repl_sessions/1bb4860555c1ed47c5f8affbf2ca437c/trace" for ::1 at 2017-06-11 04:44:35 -0400
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from block in acceptable? at /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/request.rb:26)
+Started GET "/" for ::1 at 2017-06-11 04:47:21 -0400
+Processing by RootsController#index as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant ApplicationRecord):
+  
+app/models/event.rb:1:in `<top (required)>'
+app/controllers/roots_controller.rb:3:in `index'
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers_coreyfischer__gem_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__4514993316164305058_70337235907380 at /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (62.9ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (152.4ms)
+Started GET "/" for ::1 at 2017-06-11 04:49:53 -0400
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block (3 levels) in <class:Railtie> at /Users/coreyfischer/.gem/ruby/2.3.3/gems/activerecord-5.0.3/lib/active_record/railtie.rb:113)
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RootsController#index as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant RootsController::DESC):
+  
+app/controllers/roots_controller.rb:3:in `index'
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (17.8ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (103.6ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers_coreyfischer__gem_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2574410601121922120_70100725810620 at /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (79.4ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (169.3ms)
+Started GET "/" for ::1 at 2017-06-11 04:50:42 -0400
+  
+SyntaxError (/Users/coreyfischer/Funky-Fresh/app/controllers/roots_controller.rb:3: syntax error, unexpected tCONSTANT, expecting ')'
+    @events = Event.order(:event_date DESC)
+                                          ^):
+  
+app/controllers/roots_controller.rb:3: syntax error, unexpected tCONSTANT, expecting ')'
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (75.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers_coreyfischer__gem_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2574410601121922120_70100762270100 at /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (78.1ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (164.7ms)
+Started GET "/" for ::1 at 2017-06-11 04:51:28 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 4202ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error ($color: "foreground(#2199e8)" is not a color for `red'):
+    3:   <head>
+    4:     <title>What Can I Do</title>
+    5:     <%= csrf_meta_tags %>
+    6:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    7:     <%= javascript_include_tag 'application' %>
+    8: 
+    9:   <%= yield %>
+  
+app/assets/stylesheets/foundation_and_overrides.scss:21
+app/assets/stylesheets/application.scss:1
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___4168621075732459722_70100752280760'
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (18.2ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (104.6ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers_coreyfischer__gem_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2574410601121922120_70100749157840 at /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (72.8ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (162.7ms)
+Started GET "/" for ::1 at 2017-06-11 04:54:52 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 30982ms (Views: 30955.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/roots.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-06-11 04:55:23 -0400
+Started GET "/assets/bundle.self-3cdf253a8c5d7d5c0738e7300b6e5863ea5b495039c43766052dc9c2b06446bc.js?body=1" for ::1 at 2017-06-11 04:55:23 -0400
+Started GET "/assets/roots.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-06-11 04:55:23 -0400
+Started GET "/" for ::1 at 2017-06-11 04:57:40 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 770ms (Views: 768.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-e73adae5cff8e2d5573a5d986329304a7e1afce53317ba3b7cd22f78df0418e9.js?body=1" for ::1 at 2017-06-11 04:57:41 -0400
+Started GET "/" for ::1 at 2017-06-11 05:17:57 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 1035ms (Views: 1023.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-3ae03be9cb2850a5714bd9af19de3c36b59367441c794e0be51110b4f8c4a3e7.js?body=1" for ::1 at 2017-06-11 05:17:58 -0400
+Started GET "/" for ::1 at 2017-06-11 05:18:22 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 132ms (Views: 129.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-11 05:19:26 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 140ms (Views: 138.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-11 05:20:05 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 138ms (Views: 136.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-11 05:20:48 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 851ms (Views: 848.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-38b56f71ad776eb110f6e64af288b172342bfa5d074093b305edb7f14fcab448.js?body=1" for ::1 at 2017-06-11 05:20:49 -0400
+Started GET "/" for ::1 at 2017-06-11 05:24:35 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 742ms (Views: 740.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-c28c836ae5a9d8f840efd206629114a7f358c87ddd44169436d74e2b02e4f365.js?body=1" for ::1 at 2017-06-11 05:24:36 -0400
+Started GET "/" for ::1 at 2017-06-11 05:31:02 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 1070ms (Views: 1059.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-3cc16d16012c67a9277ada2123cfbc8c03ad96c3da9fe09eee4a07372f13a3f2.js?body=1" for ::1 at 2017-06-11 05:31:03 -0400
+Started GET "/" for ::1 at 2017-06-11 05:31:29 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 854ms (Views: 851.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-96901d3ebf6c3dc358091391faa16f481ea4d430fc1b843988ea9adf50cd5e3f.js?body=1" for ::1 at 2017-06-11 05:31:30 -0400
+Started GET "/" for ::1 at 2017-06-11 05:33:38 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 1035ms (Views: 1032.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-5906e085e9767671dc1849b758e616929e73125be3a7d19795a34d42d5061e95.js?body=1" for ::1 at 2017-06-11 05:33:39 -0400
+Started GET "/" for ::1 at 2017-06-11 05:36:31 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 801ms (Views: 799.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-6a0ff283c9bfd5ef201c99337881607c4b8ea26d375a351f15cdf076ef0c688c.js?body=1" for ::1 at 2017-06-11 05:36:32 -0400
+Started GET "/" for ::1 at 2017-06-11 05:53:14 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 1015ms (Views: 997.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-e499347697c94dbe7e9233e7b880c0f9c7d81d0d6fe7bbaf739a110e66c02ace.js?body=1" for ::1 at 2017-06-11 05:53:15 -0400
+Started GET "/" for ::1 at 2017-06-11 06:03:38 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 1076ms (Views: 1060.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-4d2a1acf46da226f0f070234480074ac6bc7eb7993b44872086f6d0383c198a2.js?body=1" for ::1 at 2017-06-11 06:03:39 -0400
+Started GET "/" for ::1 at 2017-06-11 06:04:06 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 131ms (Views: 129.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-11 06:09:34 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 310ms (Views: 301.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-11 06:11:54 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 1218ms (Views: 1206.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-6ca1d664123581ca841b537a4da894ffe26a7dea1863acd80a700bc6437b704f.js?body=1" for ::1 at 2017-06-11 06:11:55 -0400
+Started GET "/" for ::1 at 2017-06-11 06:19:32 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 1079ms (Views: 1069.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-e05bd581edd63b61a6d6f6ea9dce002d094b1384939abad3058362f0df0ba6af.js?body=1" for ::1 at 2017-06-11 06:19:33 -0400
+Started GET "/" for ::1 at 2017-06-11 06:20:42 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 792ms (Views: 790.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-841140d6ed47f74ebd04a33fc616e3a58e769153fe0944418394e439caf96114.js?body=1" for ::1 at 2017-06-11 06:20:43 -0400
+Started GET "/" for ::1 at 2017-06-11 06:20:53 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 84ms (Views: 80.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-11 06:22:08 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 773ms (Views: 770.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-8f90780d21e7734acbad54be4029c796759db28981819ddae795e63176141a95.js?body=1" for ::1 at 2017-06-11 06:22:09 -0400
+Started GET "/" for ::1 at 2017-06-11 06:23:47 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 877ms (Views: 874.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-54b7e6499094d6ad353cd62b44afa274fc14413531570a1d83731bdfc6681a3f.js?body=1" for ::1 at 2017-06-11 06:23:48 -0400
+Started GET "/" for ::1 at 2017-06-11 06:28:51 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 1036ms (Views: 1026.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-75e2d59caa15cea542c89211ef805130256de708c2eaef3e793c478c19a84963.js?body=1" for ::1 at 2017-06-11 06:28:52 -0400
+Started GET "/" for ::1 at 2017-06-11 06:29:16 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 77ms (Views: 75.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-11 06:29:39 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 973ms (Views: 971.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-c3edc1c2c95b2a4e799ce81ec658e14f17ae603093dc886dab7a6eac617980de.js?body=1" for ::1 at 2017-06-11 06:29:40 -0400
+Started GET "/" for ::1 at 2017-06-11 06:40:13 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 954ms (Views: 945.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-ba0dd4fe6ced3038deea5494ead41098340fa7643960bd2c6fbb14d3af4dacc4.js?body=1" for ::1 at 2017-06-11 06:40:14 -0400
+Started GET "/" for ::1 at 2017-06-11 06:41:15 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 807ms (Views: 803.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-e8c99d7f6c9d2d3042527550db58a064376774a94de7bac49a2935d6e4ef0ca6.js?body=1" for ::1 at 2017-06-11 06:41:16 -0400
+Started GET "/" for ::1 at 2017-06-11 06:41:35 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 76ms (Views: 72.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-11 06:42:13 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 711ms (Views: 708.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-ae56b282bb574f6433481947719346ca4ccb1ea3789e46fb8872e2738de3394c.js?body=1" for ::1 at 2017-06-11 06:42:14 -0400
+Started GET "/" for ::1 at 2017-06-11 06:42:32 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 75ms (Views: 73.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-11 06:42:46 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 69ms (Views: 66.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-11 06:45:05 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 134ms (Views: 131.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-11 06:45:33 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 161ms (Views: 156.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-11 06:46:31 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 714ms (Views: 711.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-ba454bb6c7d21051a38d9531740e0620a28290a0450497404bf29a85cece09f5.js?body=1" for ::1 at 2017-06-11 06:46:32 -0400
+Started GET "/" for ::1 at 2017-06-11 06:46:47 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 76ms (Views: 71.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-11 06:48:29 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 141ms (Views: 137.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-11 06:49:40 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 785ms (Views: 782.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-b4ca24f43c8018dd76b3b08f412f5bd7851f0322ee2379315682bdfa133b9680.js?body=1" for ::1 at 2017-06-11 06:49:41 -0400
+Started GET "/" for ::1 at 2017-06-11 06:49:59 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 78ms (Views: 75.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-11 06:53:30 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 763ms (Views: 759.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-265e9b96a66b17c90de2986c978a080c645c24bff43c88df6af48cbe103b49de.js?body=1" for ::1 at 2017-06-11 06:53:31 -0400
+Started GET "/" for ::1 at 2017-06-11 06:55:01 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 155ms (Views: 151.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-11 06:55:10 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 70ms (Views: 66.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-11 06:55:43 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 811ms (Views: 808.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-f11d98a94f64fc9dd7ee9e07ea73b4a09d6f2b1731626eacee1797dbfc5c672d.js?body=1" for ::1 at 2017-06-11 06:55:44 -0400
+Started GET "/" for ::1 at 2017-06-11 07:04:02 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 175ms (Views: 170.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-11 18:10:51 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 1140ms (Views: 1120.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-0fff3cd3030475830359cb2ddbd2399378ad7bf8aa7b63f1b8648d811b157789.js?body=1" for ::1 at 2017-06-11 18:10:52 -0400
+Started GET "/" for ::1 at 2017-06-11 18:14:19 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 1012ms (Views: 1009.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-e2e530eb1d8d4f7c9dadcdcf60dd8702e69d0b6ae5e6277d9d335dbf8ee3a962.js?body=1" for ::1 at 2017-06-11 18:14:20 -0400
+Started GET "/NewsEvents" for ::1 at 2017-06-11 18:14:54 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NewsEvents"):
+  
+actionpack (5.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered collection of /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [17 times] (29.6ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (23.1ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (168.6ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers_coreyfischer__gem_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2574410601121922120_70100800674180 at /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (76.3ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (161.2ms)
+Started GET "/" for ::1 at 2017-06-11 18:15:15 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 76ms (Views: 72.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/roots.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-06-11 18:15:15 -0400
+Started GET "/Contact" for ::1 at 2017-06-11 18:17:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/Contact"):
+  
+actionpack (5.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered collection of /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [17 times] (14.0ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (116.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers_coreyfischer__gem_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2574410601121922120_70100795851500 at /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (77.1ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (170.4ms)
+Started GET "/" for ::1 at 2017-06-11 18:17:39 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 883ms (Views: 881.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-5389a326c18b431c8864ec4027c3648f72cb69f7caac12c0efc14aa0e68cf420.js?body=1" for ::1 at 2017-06-11 18:17:40 -0400
+Started GET "/" for ::1 at 2017-06-11 18:21:15 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 819ms (Views: 816.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-fe251a45e3c8cbe6719c179cc53ac590f9cceafc5fb3fe1176b9efe42b94ebc8.js?body=1" for ::1 at 2017-06-11 18:21:16 -0400
+Started GET "/NewsEvents" for ::1 at 2017-06-11 18:26:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NewsEvents"):
+  
+actionpack (5.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered collection of /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [17 times] (4.4ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (101.6ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers_coreyfischer__gem_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2574410601121922120_70100802692080 at /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (80.9ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (172.4ms)
+Started GET "/" for ::1 at 2017-06-11 18:27:46 -0400
+Processing by RootsController#index as HTML
+  Rendering roots/index.html.erb within layouts/application
+  Rendered roots/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 750ms (Views: 747.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-55bbde8b5196c885ada79c85f7f0922c27d72fb0f04425ebb60c5503ed3d2b2c.js?body=1" for ::1 at 2017-06-11 18:27:47 -0400

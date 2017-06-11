@@ -5,8 +5,8 @@ class Buy extends Component {
   super(props);
   }
   render() {
-      return (
-      );
+      return (<div>Where to Buy</div>
+      )
   }
 }
 

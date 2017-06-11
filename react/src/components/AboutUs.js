@@ -5,9 +5,9 @@ class AboutUs extends Component {
   super(props);
   }
   render() {
-      return (
-      );
+    return (<div>About Us</div>
+    )
   }
-}
+};
 
 export default AboutUs;

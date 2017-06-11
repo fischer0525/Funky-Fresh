@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'homes#index'
+  root 'roots#index'
 end
