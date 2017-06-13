@@ -1,0 +1,8 @@
+/coverage
+
+# Ignore environment variables
+.env
+
+tmp/*
+
+/app/assets/javascripts/bundle.js
