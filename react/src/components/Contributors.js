@@ -5,7 +5,7 @@ class Contributors extends Component {
   super(props);
   }
   render() {
-      return (<div>Contributors</div>
+      return (<div></div>
       )
   }
 }

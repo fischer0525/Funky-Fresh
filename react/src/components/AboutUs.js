@@ -5,7 +5,7 @@ class AboutUs extends Component {
   super(props);
   }
   render() {
-    return (<div>About Us</div>
+    return (<div></div>
     )
   }
 };

@@ -56,10 +56,10 @@ render() {
     let className;
     if(product.id===this.state.selectedProductId){
       className="selected"
-      buttonValue=product.product_title
+      buttonValue=product.product_img
     }else{
       className="not-selected"
-      buttonValue=product.product_title
+      buttonValue=product.product_img
 
     }
 

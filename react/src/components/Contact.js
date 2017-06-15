@@ -5,7 +5,7 @@ class Contact extends Component {
   super(props);
   }
   render() {
-      return (<div>Contact Us</div>
+      return (<div></div>
       )
   }
 }
