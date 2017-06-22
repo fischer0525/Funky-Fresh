@@ -8,7 +8,7 @@ class Product extends React.Component {
 
     return (
       <div className="product">
-        <div><img src={this.props.image} className="image" onClick={this.props.titleClick}/></div>
+        <div><img src={this.props.image} className="product-image" onClick={this.props.titleClick}/></div>
         <div className={this.props.className}> {this.props.description} </div>
       </div>
     )

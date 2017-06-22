@@ -3,9 +3,12 @@ class CreateEvents < ActiveRecord::Migration[5.0]
     create_table :events do |t|
       t.string :event_img, null: false
       t.string :event_title, null: false
-      t.date :event_date, null: false
+      t.datetime :event_datetime, null: false
       t.string :event_description, null: false
-      t.string :event_location, null: false
+      t.string :event_address, null: false
+      t.string :event_city, null: false
+      t.string :event_state, null: false
+      t.string :event_zip, null: false
       t.string :event_url
       t.timestamps
     end

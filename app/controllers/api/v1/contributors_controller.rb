@@ -1,5 +1,5 @@
-class Api::V1::ContributorssController < ApiController
+class Api::V1::ContributorsController < ApiController
   def index
-    render json: Contributors.all
+    render json: Contributor.all
   end
 end

@@ -1,13 +1,14 @@
 import React from 'react';
 
-class EventsItem extends React.Component {
+class Contributor extends React.Component {
   constructor(props){
     super(props);
   }
   render() {
+
     return (<div></div>
     )
   }
 }
 
-export default EventsItem;
+export default Contributor;

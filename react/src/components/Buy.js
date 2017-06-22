@@ -38,7 +38,7 @@ render() {
 
     return (
       <Business
-        id={product.id}
+        id={business.id}
         key={index}
         name={business.business_name}
         url={business.business_url}
