@@ -10,7 +10,7 @@ class Products extends Component {
   };
   this.getData = this.getData.bind(this);
   this.handleProductSelect = this.handleProductSelect.bind(this)
-}
+} 
 
 
 
@@ -55,10 +55,10 @@ render() {
     let buttonValue;
     let className;
     if(product.id===this.state.selectedProductId){
-      className="selected"
+      className="product selected"
       buttonValue=product.product_img
     }else{
-      className="not-selected"
+      className="product not-selected"
       buttonValue=product.product_img
 
     }
@@ -79,7 +79,7 @@ render() {
 
   return(
     <div className="center-container">
-        <div className="center-item">
+        <div className="center-item products">
           {products}
         </div>
       </div>

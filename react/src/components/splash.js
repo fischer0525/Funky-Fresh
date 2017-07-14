@@ -7,7 +7,6 @@ class Splash extends Component {
   render() {
     return (<div className="center-container">
         <div className="center-item">
-          <h1>FUNKY FUNKY FUNK FRESH</h1>
         </div>
       </div>
 

@@ -7,9 +7,9 @@ class Product extends React.Component {
   render() {
 
     return (
-      <div className="product">
+      <div className={this.props.className}>
         <div><img src={this.props.image} className="product-image" onClick={this.props.titleClick}/></div>
-        <div className={this.props.className}> {this.props.description} </div>
+        <div className="description-visible"> <h3>{this.props.description}</h3> </div>
       </div>
     )
   }

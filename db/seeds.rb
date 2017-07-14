@@ -30,13 +30,13 @@ often loves art when its purest artiness is art.", contributor_url: "http://www.
 contributor3 = Contributor.create!(contributor_img: "https://celebratingart.files.wordpress.com/2012/09/isabella-headshot.jpg",
 contributor_name: "Raven Elyse", contributor_bio: "This Artist is big into art and really loves art and
 often loves art when its purest artiness is art.", contributor_url: "http://www.deviantart.com/")
-news1 = New.create!(news_img: "https://brodandtaylor.com/wp-content/uploads/2016/01/Kombucha-800-x-300web-7935.jpg",
+news1 = New.create!(news_img: "https://s3.amazonaws.com/funky-fresh/FF_logo.png",
 news_title: "New Flavor Release!", news_description: "Introducing our new Peach tarty party,
 golden peached wit a blend of 5 herbs and spices.")
-news2 = New.create!(news_img: "https://brodandtaylor.com/wp-content/uploads/2016/01/Kombucha-800-x-300web-7935.jpg",
+news2 = New.create!(news_img: "https://s3.amazonaws.com/funky-fresh/FF_logo.png",
 news_title: "New Flavor Release!", news_description: "Introducing our new Peach tarty party,
 golden peached wit a blend of 5 herbs and spices.")
-news3 = New.create!(news_img: "https://brodandtaylor.com/wp-content/uploads/2016/01/Kombucha-800-x-300web-7935.jpg",
+news3 = New.create!(news_img: "https://s3.amazonaws.com/funky-fresh/FF_logo.png",
 news_title: "New Flavor Release!", news_description: "Introducing our new Peach tarty party,
 golden peached wit a blend of 5 herbs and spices.")
 event1 = Event.create!(event_img: "https://img.vimbly.com/images/full_photos/beer-flights-13.jpg",
@@ -61,26 +61,26 @@ business_url: "http://www.villagemotorsinc.net/", business_description: "Hot car
 business_address: "53 Walnuttown Road", business_city: "Fleetwood", business_state: "PA",
 business_zip: "19522")
 product1 = Product.create!(product_title: "Kombucha 1",
-product_img: "http://thecookinggeek.com/wp-content/uploads/2010/12/Glass-of-iced-tea.jpg",
+product_img: "https://s3.amazonaws.com/funky-fresh/FF_logo.png",
 product_description: "OMG icey and so nicey, you don't have to think twicey about enjoying this beverage")
 product2 = Product.create!(product_title: "Kombucha 2",
-product_img: "http://thecookinggeek.com/wp-content/uploads/2010/12/Glass-of-iced-tea.jpg",
+product_img: "https://s3.amazonaws.com/funky-fresh/FF_logo.png",
 product_description: "OMG icey and so nicey, you don't have to think twicey about enjoying this beverage")
 product3 = Product.create!(product_title: "Kombucha 3",
-product_img: "http://thecookinggeek.com/wp-content/uploads/2010/12/Glass-of-iced-tea.jpg",
+product_img: "https://s3.amazonaws.com/funky-fresh/FF_logo.png",
 product_description: "OMG icey and so nicey, you don't have to think twicey about enjoying this beverage")
 product4 = Product.create!(product_title: "Kombucha 4",
-product_img: "http://thecookinggeek.com/wp-content/uploads/2010/12/Glass-of-iced-tea.jpg",
+product_img: "https://s3.amazonaws.com/funky-fresh/FF_logo.png",
 product_description: "OMG icey and so nicey, you don't have to think twicey about enjoying this beverage")
 product5 = Product.create!(product_title: "Kombucha 5",
-product_img: "http://thecookinggeek.com/wp-content/uploads/2010/12/Glass-of-iced-tea.jpg",
+product_img: "https://s3.amazonaws.com/funky-fresh/FF_logo.png",
 product_description: "OMG icey and so nicey, you don't have to think twicey about enjoying this beverage")
 product6 = Product.create!(product_title: "Kombucha 6",
-product_img: "http://thecookinggeek.com/wp-content/uploads/2010/12/Glass-of-iced-tea.jpg",
+product_img: "https://s3.amazonaws.com/funky-fresh/FF_logo.png",
 product_description: "OMG icey and so nicey, you don't have to think twicey about enjoying this beverage")
 product7 = Product.create!(product_title: "Kombucha 7",
-product_img: "http://thecookinggeek.com/wp-content/uploads/2010/12/Glass-of-iced-tea.jpg",
+product_img: "https://s3.amazonaws.com/funky-fresh/FF_logo.png",
 product_description: "OMG icey and so nicey, you don't have to think twicey about enjoying this beverage")
 product8 = Product.create!(product_title: "Kombucha 8",
-product_img: "http://thecookinggeek.com/wp-content/uploads/2010/12/Glass-of-iced-tea.jpg",
+product_img: "https://s3.amazonaws.com/funky-fresh/FF_logo.png",
 product_description: "OMG icey and so nicey, you don't have to think twicey about enjoying this beverage")
