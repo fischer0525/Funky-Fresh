@@ -1,4 +1,3 @@
-requr
 class Api::V1::ContactsController < ApiController
   def index
     render json: Contact.all

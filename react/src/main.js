@@ -24,7 +24,7 @@ $(function() {
   ReactDOM.render(
     <Router>
     <div>
-      <header className="main-header shadow">
+      <header className="main-header div-shadow">
         <Link to="/"><img src="https://s3.amazonaws.com/funky-fresh/FF_logo.png" className="logo"/></Link>
         <div className="main-nav">
           <Link to="/News">News</Link>
@@ -50,7 +50,7 @@ $(function() {
         <Route path="/News/NewsItem" component={NewsItem} />
         <Route path="/Events/EventsItem" component={EventsItem} />
         <Route path="/Submitted" component={Submitted} />
-        <footer className="main-footer">
+        <footer className="main-footer div-shadow">
         <h1>Populating info for sizing reason temp</h1>
         </footer>
     </div>

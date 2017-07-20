@@ -55,39 +55,39 @@ class Contact extends Component {
       return (
         <div className="center-container">
             <div className="center-item contact">
-              <div className="div-shadow contact-div">
+              <div className="contact-div">
                 <h1>For any inquiries or orders please contact us:</h1>
               </div>
               <div className="form-div div-shadow">
                 <form className="contact-form" onSubmit={this.submitForm}>
                 <div className="contact-top">
                   <label>
-                  <h2>Name: </h2>
-                    <input type="text" name='name' className="inset-shadow" value={ this.state.name } onChange={ this.handleChange }/>
+                  <h1>Name: </h1>
+                    <input type="text" name='name' className="input-shadow" value={ this.state.name } onChange={ this.handleChange }/>
                   </label>
                   <label>
-                  <h2>Email: </h2>
-                    <input type="text" name='email' className="inset-shadow" value={ this.state.email } onChange={ this.handleChange } />
-                  </label>
-                </div>
-                <div>
-                  <label>
-                  <h2>Contact Phone: </h2>
-                    <input type="text" name='contact_number' className="inset-shadow" value={ this.state.contact_number } onChange={ this.handleChange } />
-                  </label>
-                  <label>
-                  <h2>Subject: </h2>
-                    <input type="text" name='subject' className="inset-shadow" value={ this.state.subject } onChange={ this.handleChange } />
+                  <h1>Email: </h1>
+                    <input type="text" name='email' className="input-shadow" value={ this.state.email } onChange={ this.handleChange } />
                   </label>
                 </div>
                 <div>
                   <label>
-                  <h2>Message: </h2>
-                    <textarea name='message' className="inset-shadow" value={ this.state.message } onChange={ this.handleChange } />
+                  <h1>Contact Phone: </h1>
+                    <input type="text" name='contact_number' className="input-shadow" value={ this.state.contact_number } onChange={ this.handleChange } />
+                  </label>
+                  <label>
+                  <h1>Subject: </h1>
+                    <input type="text" name='subject' className="input-shadow" value={ this.state.subject } onChange={ this.handleChange } />
+                  </label>
+                </div>
+                <div>
+                  <label className="text-area">
+                  <h1>Message: </h1>
+                    <textarea name='message' className="input-shadow" value={ this.state.message } onChange={ this.handleChange } />
                   </label>
                 </div>
                 <div className="contact-bottom">
-                  <input type="submit" value="Submit" className="button"/>
+                  <input type="submit" value="Submit" className="button div-shadow"/>
                 </div>
                 </form>
               </div>
