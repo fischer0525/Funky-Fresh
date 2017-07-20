@@ -26,11 +26,13 @@ ActiveRecord::Schema.define(version: 20170611055317) do
   end
 
   create_table "contacts", force: :cascade do |t|
-    t.string "first_name",     null: false
-    t.string "last_name",      null: false
-    t.string "email",          null: false
-    t.string "contact_number"
-    t.string "message",        null: false
+    t.string   "name",           null: false
+    t.string   "email",          null: false
+    t.string   "contact_number"
+    t.string   "subject"
+    t.string   "message",        null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "contributors", force: :cascade do |t|
@@ -43,9 +45,12 @@ ActiveRecord::Schema.define(version: 20170611055317) do
   create_table "events", force: :cascade do |t|
     t.string   "event_img",         null: false
     t.string   "event_title",       null: false
-    t.date     "event_date",        null: false
+    t.datetime "event_datetime",    null: false
     t.string   "event_description", null: false
-    t.string   "event_location",    null: false
+    t.string   "event_address",     null: false
+    t.string   "event_city",        null: false
+    t.string   "event_state",       null: false
+    t.string   "event_zip",         null: false
     t.string   "event_url"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
@@ -54,7 +59,6 @@ ActiveRecord::Schema.define(version: 20170611055317) do
   create_table "news", force: :cascade do |t|
     t.string   "news_img"
     t.string   "news_title",       null: false
-    t.string   "news_date",        null: false
     t.string   "news_description", null: false
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false

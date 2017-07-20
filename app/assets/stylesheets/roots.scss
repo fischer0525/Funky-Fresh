@@ -1,3 +1,550 @@
 // Place all the styles related to the Roots controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// notoserif
+// #DA5E3D orange reddish, lightened 20% #FF9170
+// #FDC684 light orange
+//#E46D4E reddish
+// #ECAD6B light cream orange #ECAD6B
+// #F57A57
+// #1B3E47
+// #71897D #6F887B ligh sort of pale blue
+// #3F6068 complimentary #694840
+// #245965****** lightened 10% #3E737F, 20% #578C98
+// #314D51 darker blue grey
+// #66786E blueish green grey
+// #E7CDB4 darkest greyish cream
+// #EACAB2 darker creamy pinky white
+// #F4E3DA lighter creamy pinkish white
+// #F0D9CA creamy pinkish white
+// #1C353D blueish grey black
+// #173339 lighter blackish purple
+// #304B53 blackish purple
+// #F8EDEA lightest off-white
+// #4E6D75 medium light blue
+// #86A09C light greyish blue
+// #37606A greyish blue
+// #FFFFFF
+// #51818C
+// #F89069
+// #E56A46
+// #f79431 orange
+// #EA8724 orange ***********
+// #0d4756 darker blue
+// #f9f0e5********** off white
+// #573d91 purple
+// #14505e purpleish blue
+// #9cbfa9 light pale blue
+@font-face {
+    font-family: 'OSB';
+    src: font-url('OldStandard-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OSI';
+    src: font-url('OldStandard-Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OSR';
+    src: font-url('OldStandard-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NotoSerif';
+    src: font-url('NotoSerif-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NotoSerif';
+    src: font-url('NotoSerif-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Bebas';
+    src: font-url('BebasKai-Regular.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Bitter';
+    src: font-url('Bitter-Regular.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: font-url('Montserrat-Regular.otf') format('truetype');
+}
+
+h1 {
+  color: #14505e;
+  font-family: Bitter;
+}
+
+h2 {
+  color: #14505e;
+  font-family: Bitter;
+}
+
+h3 {
+  font-size: 130%;
+  color: #f9f0e5;
+  font-family: Bitter;
+}
+
+a {
+  font-family: Bebas;
+  text-decoration: none;
+  color: #f9f0e5;
+  font-size: 175%;
+}
+
+a:focus {
+  color: #14505e;
+}
+
+div {
+  font-family: OSR;
+  color: #14505e;
+}
+
+body {
+  overflow: auto;
+}
+
+input:focus {
+
+}
+.inset-shadow {
+  -moz-box-shadow:    inset 0 0 3px #000000;
+   -webkit-box-shadow: inset 0 0 3px #000000;
+   box-shadow:         inset 0 0 3px #000000;
+}
+
+// .shadow
+// {
+//     position:relative;
+//     -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+//        -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+//             box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+// }
+// .shadow:before, .shadow:after
+// {
+//     content:"";
+//     position:absolute;
+//     z-index:-1;
+//     -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+//     -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+//     box-shadow:0 0 20px rgba(0,0,0,0.8);
+//     top:50%;
+//     bottom:0;
+//     left:10px;
+//     right:10px;
+//     -moz-border-radius:100px / 10px;
+//     border-radius:100px / 10px;
+// }
+// .shadow:after
+// {
+//     right:10px;
+//     left:auto;
+//     -webkit-transform:skew(8deg) rotate(3deg);
+//        -moz-transform:skew(8deg) rotate(3deg);
+//         -ms-transform:skew(8deg) rotate(3deg);
+//          -o-transform:skew(8deg) rotate(3deg);
+//             transform:skew(8deg) rotate(3deg);
+// }
+//
+
+.div-shadow {
+  -webkit-box-shadow:1px 1px 20px rgba(0,0,0,0.4);
+  -moz-box-shadow:1px 1px 20px rgba(0,0,0,0.4);
+  box-shadow:1px 1px 20px rgba(0,0,0,0.4);
+}
+
+.input-shadow {
+  -webkit-box-shadow:1px 1px 5px rgba(0,0,0,0.8);
+  -moz-box-shadow:1px 1px 5px rgba(0,0,0,0.8);
+  box-shadow:1px 1px 5px rgba(0,0,0,0.8);
+}
+
+.logo {
+  max-width: 7rem;
+  max-height: 7rem;
+  margin: 0.5rem 0rem 0.5rem 10rem;
+}
+
+.center-container {
+  position: fixed;
+  z-index: 1;
+  top: 8rem;
+  bottom: 5rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  min-height: 75vh;
+  max-height: 80vh;
+  background-color: #f9f0e5;
+  width: 100%;
+}
+
+.center-container:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url("https://s3.amazonaws.com/funky-fresh/FF_logo.png") center center;
+  opacity: .1;
+}
+
+.center-item {
+  margin: auto;
+  display: flex;
+
+}
+
+.center-item.contact > div.form-div {
+  margin: 1.5rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  flex:1;
+  min-height: 28rem;
+  max-height: 28rem;
+  min-width: 40rem;
+  max-width: 40rem;
+  border-radius: 10px;
+}
+
+.center-item.contact > div.form-div:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f9f0e5;
+    opacity: 0.6;
+    border-radius: 10px;
+}
+
+.center-item.contact > div.contact-div {
+  margin: 1.5rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  flex:1;
+  min-height: 28rem;
+  max-height: 28rem;
+  min-width: 40rem;
+  max-width: 40rem;
+  border-radius: 10px;
+}
+
+// .center-item.contact {
+//   position: relative;
+//   z-index: 1;
+// }
+
+.center-item.contact > div > h1 {
+  color: #14505e;
+  text-align: center;
+}
+
+.news {
+}
+
+.products {
+}
+
+.about-us {
+  width:80%;
+}
+
+.newsItem {
+  margin-bottom: 2rem;
+}
+
+.news-image {
+  width: 15rem;
+  height: 15rem;
+  margin-bottom: -100px;
+  margin-left: 1rem;
+}
+
+.splash-image {
+  width: 400px;
+  height: 400px;
+}
+
+.news-info {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #434343;
+  min-height: 15rem;
+  max-height: 15rem;
+  min-width: 40rem;
+  max-width: 35rem;
+  padding: 0.5rem;
+}
+
+.news-info div{
+  color: #304B53;
+}
+
+.news-date {
+  display: flex;
+  justify-content: center;
+  padding: 0rem 0rem 0rem 8rem;
+}
+
+.news-title {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.new-description {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.5rem 1rem 0rem 3rem;
+}
+
+.product-image{
+  margin: -9px;
+  overflow-x: hidden;
+  min-width: 320px;
+  height: 320px;
+}
+
+.description-visible {
+  padding: 1rem 2.5rem 5rem 3rem;
+}
+
+.description-visible h2{
+  font-family: Bitter;
+}
+
+.product.selected {
+  min-width: 300px;
+  max-width: 300px;
+  max-height: 600px;
+  overflow-x: hidden;
+  flex-direction: column;
+  margin: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-left: 7px solid #23150E;
+  border-right: 7px solid #23150E;
+  border-bottom: 7px solid #23150E;
+  border-top: 7px solid #23150E;
+  border-radius: 150px;
+  transition-property: height, max-height;
+  transition-duration: 0.7s;
+  transition-timing-function: ease-in;
+  background-color: #f79431;
+
+}
+.product.not-selected {
+  max-width: 300px;
+  max-height: 300px;
+  border-left: 7px solid #23150E;
+  border-right: 7px solid #23150E;
+  border-bottom: 7px solid #23150E;
+  border-top: 7px solid #23150E;
+  border-radius: 150px;
+  flex-direction: column;
+  margin: 2rem;
+  justify-content: center;
+  overflow-y: hidden;
+  transition-duration: 0.9s;
+
+}
+.product {
+  max-width: 200px;
+  max-height: 200px;
+  flex-direction: column;
+  margin: 2rem;
+  justify-content: center;
+}
+
+.contact-form {
+  min-width: inherit;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+// .contact-form {
+//   max-height: 400px;
+//   max-width: 400px;
+//   height: 400px;
+//   width: 400px;
+//   border-radius: 50%;
+//   background-color: #ECAD6B;
+//   display: flex;
+//   flex-direction: column;
+//   border: 10px solid #304B53;
+// }
+
+// .contact-form .contact-top {
+//   margin: 23% 6% 1% 6%;
+// }
+
+.contact-form > div {
+  display: flex;
+  min-width: 100%;
+  max-width: 100%;
+  // position: relative;
+  margin: 0rem 0rem 0.3rem 0rem;
+}
+
+
+.center-item.contact .contact-div h1 {
+  font-family: Bebas;
+}
+
+.center-item.contact .product-image {
+}
+
+.contact-form label {
+  margin: auto;
+  width: inherit;
+}
+
+label.text-area {
+  margin: 0rem 2.5rem;
+  width: inherit;
+}
+
+.contact-form h1 {
+  margin: auto;
+  color: #14505e;
+  font-family: Bebas;
+}
+
+.contact-form h2 {
+  margin: 0rem 0rem 0.3rem 0rem;
+  color: #14505e;
+  font-family: Bebas;
+}
+
+.contact-form input[type="text"] {
+  min-width: inherit;
+  min-height: 2rem;
+  border-radius: 5px;
+  border-width: 0;
+  font-size: 20px;
+  font-family: Bitter;
+  color: #14505e;
+  opacity: 0.5;
+  padding:0.1rem 0.3rem;
+}
+
+.contact-form input[type="text"]:focus, .contact-form input[type="text"]:hover {
+  outline: none;
+  opacity: 1;
+}
+
+.contact-form textarea {
+  min-width: 212.5%;
+  min-height: 8rem;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 0.5rem;
+  font-family: Bitter;
+  color: #14505e;
+  border-width: 0;
+  background-color: #FFFFFF;
+  opacity: 0.5;
+}
+
+.contact-form textarea:focus, .contact-form textarea:hover {
+  outline: none;
+  opacity: 1;
+}
+
+.contact-form .contact-bottom {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  background-color: #14505e;
+  font-family: Bebas;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f9f0e5;
+  min-width: 8rem;
+  min-height: 3rem;
+  border-radius: 5px;
+  opacity: 0.8;
+  border-width: 0;
+}
+
+.button:hover, .button:focus {
+  opacity: 1;
+}
+
+.main-header {
+
+}
+
+.main-nav {
+
+}
+
+@media (min-width: 769px) {
+	.main-header {
+		width: 90%;
+		margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+	}
+}
+@media (min-width: 1020px) {
+	.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+		width: 100%;
+    min-height: 8rem;
+    max-height: 8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #EA8724;
+	}
+  .main-nav {
+    margin-top: 2.9%;
+    width: 60%;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .main-footer {
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: 5rem;
+    min-height: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #14505e;
+  }
+  .main-footer h1 {
+    font-family: Bebas;
+    color: #f9f0e5;
+  }
+}
